@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const berat = 10
+        let kota = "kotalain"
+        let bogor = 2000
+        let depok = 4000
+        let kotalain = 6000
+
+        switch (kota) {
+            case "bogor":
+                console.log(bogor * berat);
+                break;
+            case "depok": console.log(depok * berat);
+                break;
+            case "kotalain": console.log(kotalain * berat);
+                break;
+            default:
+                break;
+        }
+
+
+        let teori = 80
+        let praktek = 90
+        let ratarata = (teori + praktek) / 2
+        let kehadiran = 90
+        const pelanggaran = true
+
+        let nama = "Perieren";
+        console.log("nama:", nama);
+        console.log("nilai ratarata:" + ratarata)
+
+        if (kehadiran < 90 || praktek < 80 || teori < 75) {
+            console.log("tidak lulus")
+        } else {
+            console.log(ratarata >= 80 ? "Lulus sangat baik" : "Lulus biasa");
+
+        }
+
+
+        // let nilaiteori = 75
+        // if (nilaiteori < 75) {
+        //     console.log("tidak lulus")
+        // } else {
+        //     console.log("lulus")
+        // }
+    </script>
+</body>
+
+</html>

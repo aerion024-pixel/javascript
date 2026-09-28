@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // let = nilainya bisa diubah tapi tidak boleh di deklarasikan ulang
+        // var = nilainya bisa diubah(rawan kebocoran)
+        // const = nilainya tetap
+        let nama = "anton";
+        // nama = "tes";
+        console.log(nama);
+
+        var alamat = "bogor";
+        // var alamat = "jakarta";
+        console.log(alamat);
+
+        const nilaitetap = 10;
+        // const nilaitetap = 20
+        console.log(nilaitetap);
+
+        // object dan immutability
+        // object
+        const peserta = {
+            nama: "tono"
+        };
+        peserta.alamat = "kp. sawah";
+        console.log(peserta);
+
+        // immutability : membuat object baru menggunakan spred operator (...)
+        const pesertabaru = { ...peserta, nim: "25100600791" }
+        console.log(pesertabaru);
+
+        // 1. string & template literals
+        const namadepan = "shusi";
+        const namabelakang = "pujiastuti";
+
+        let literalscontoh = `
+    nama depan    : ${namadepan}
+    nama belakang : ${namabelakang}
+    `;
+        console.log(namadepan + " " + namabelakang);
+        console.log(literalscontoh)
+
+        // operator aritmatika $ assignment
+        // * ini untuk perkalian, / ini untuk pembagian, - ini untuk pengurangan, + ini untuk penjuamlahan
+        let angka1 = 1.5;
+        let angka2 = 1;
+
+        console.log(angka1 * angka2)
+        console.log(angka1 / angka2)
+        console.log(angka1 - angka2)
+        // console.log(angka1 + "+" )
+        console.log(angka1 + angka2)
+
+        let a = 7;
+        a += 10; // a = a + 10
+        console.log(a);
+
+        // operator perbandingan $ logika
+        let user = "admin";
+        let password = "12345678";
+        // kalau === harus sama, kalau == 
+
+        if (user === "admin" && password === "12345678") {
+            console.log("login sukses");
+        } else {
+            console.log("gagal");
+        }
+        console.log("5 > 10 :", 5 > 10);//false
+        console.log("5 < 10 :", 5 < 10);//true
+
+        //if tenary
+        let umur = 20;
+        if (umur >= 17) {
+            console.log("dewasa");
+        }
+        else {
+            console.log("bocil");
+        }
+        let tenaryyy = (umur >= 17) ? "dewasa" : "bocil";
+        console.log(tenaryyy);
+
+        //switch case
+        const username = "admin";
+        switch (username) {
+            case "pimpinan":
+                console.log("ini pimpinan");
+                break;
+            case "kasir": console.log("ini kasir");
+                break;
+            case "admin": console.log("ini admin");
+                break;
+            default:
+                break;
+        }
+
+        //aturan berat paket: ssntandar 10kg
+        //tarif perkilo berdasarkan kota tujuan, bogor:2000 perkg, depok;4000perkg, else;6000 perkg 
+        //rumus: berat paket tarif perkg
+
+        const berat = 10
+        let kota = "kotalain"
+        let bogor = 2000
+        let depok = 4000
+        let kotalain = 6000
+
+        // switch (kota) {
+        //     case "bogor":
+        //         console.log(bogor * berat);
+        //         break;
+        //     case "depok": console.log(depok * berat);
+        //         break;
+        //     case "kotalain": console.log(kotalain * berat);
+        //         break;
+        //     default:
+        //         break;
+        // }
+
+        // funtion
+        function demoScope() {
+
+            if (true) {
+                var varVariable = "saya var (funtion scope)";
+                let letVariable = "saya let (block scope)";
+                const constVariable = "saya const (block scope)";
+
+            }
+
+            // console.log(varVariable);
+            // console.log(letVariable);
+            // console.log(constVariable);
+        }
+        demoScope()
+
+        //traditional function expression
+        const squareES5 = function (x) {
+            return x * x;
+        }
+        console.log(squareES5(4));
+
+        //arrow function (ES6+) - explicit return
+        const squareES6 = (x) => {
+            return x * x;
+        }
+        console.log(squareES6(2));
+
+        // const squareES6Implicit (ES6+) - IMPLICIT return
+        const squareES6Implicit = (x) => x * x;
+        console.log(squareES6Implicit(5));
+
+        //penggunaan pada method array
+        const fruits = ["apel", "nanas", "durian"];
+        const squareFruits = fruits.map((fruit) => fruit);
+        console.log(squareFruits[4])
+
+        // looping
+        for (let index = 0; index <= 5; index++) {
+            console.log("perulangan ke- " + index)
+
+        }
+
+        let no = 1;
+        while (no <= 5) {
+            console.log(`ini nomor ke- ${no}`);
+            no++;
+        }
+
+        let x = 6
+        do { 
+            console.log(`nilai x =${x}`);
+            x++;
+        } while (x <= 5);
+    </script>
+
+</body>
+
+</html>
