@@ -1,0 +1,31 @@
+<!-- array : struktur data yang bisa menyimpan datanya lebih dari satu
+-->
+<script>
+    // const nama = "budi, laras, andi"
+    let nama = ["emilia", "anastasia", "tiana"]//0,1,2
+    let keranjang = ["buah", "sayur", "ikan"]//0,1,2
+
+    console.log(nama[0])
+    console.log(nama[1])
+    console.log(nama[2])
+    console.log(keranjang[2])
+    nama[2] = "chris"
+    console.log(nama)
+    nama.push('tumbelina')
+    nama.unshift("agnes")
+    console.log("nama baru", nama)
+
+    //indexOf :method/function
+    const target = nama.indexOf("emilia")
+    console.log(target)
+
+    //length : count
+    const total = nama.length
+    const totalKeranjang = keranjang.length
+    console.log(nama.length)
+
+    //spread operator:... jangan pake const pakai let
+    nama = [...nama, "awanda"]
+    nama = ["awanda", ...nama]
+    console.log("nama baru", nama)
+</script>

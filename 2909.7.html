@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM || Document Object Model</title>
+</head>
+
+<body>
+    <h1 id="title">Teks awal</h1>
+    <p id="description">Description awal</p>
+    <p id="status">status awal</p>
+
+    <div id="modul">
+        <ul id="modulul">
+            <li>
+
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const body = document.body
+        const title = document.getElementById('title')
+        const desc = document.getElementById('description')
+        const status = document.querySelector('#status')
+
+        body.style.backgroundColor = "gray";
+        title.style.color = "white";
+        title.innerText = "ppkd jakarta pusat";
+
+        desc.style.color = "white";
+        desc.innerText = "selamat datang di ppkd jakarta pusat";
+
+        status.style.color = "white";
+        status.innerText = "tersertifikasi BNSP";
+
+        const listunit = ["J.620100.005.02 - Mengimplementasikan User Interface",
+            "J.620100.100.01 - Melakukan Instalasi Software Tools Pemrogaman"
+        ]
+
+        //create element
+        const modul = document.getElementById('modul')
+        const modulul = document.getElementById('modulul')
+        // createElement():
+        listunit.forEach((unitText) => {
+            const itemli = document.createElement('li')
+
+            itemli.innerText = unitText;
+            itemli.style.marginBottom = "8px"
+            
+            modulul.appendChild(itemli)
+
+        })
+        const isimodul = document.createElement('p')
+        isimodul.innerText = "laravel adalah framework php"
+        isimodul.style.color = "white"
+
+        modul.appendChild(isimodul)
+
+
+
+    </script>
+</body>
+
+</html>
