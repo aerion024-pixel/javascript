@@ -1,0 +1,65 @@
+<!-- event : kejadian, apa yang terjadi
+onClick, onChange, onKeyup, onKeyDown
+-->
+
+<!DOCTYPE html>
+<html lang`="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM & Event || Javascript</title>
+</head>
+
+<body>
+    <!-- elementTarget.addEventListener('') -->
+
+
+
+    <h1>form sapaan</h1>
+    <input type="text" id="nama" placeholder="masukkan nama">
+
+    <button id="simpan">klik saya</button>
+    <button id="hapus">hapus</button>
+
+    <p id="sapaan">hallo nama :</p>
+
+    <script>
+        const heading = document.querySelector('h1')
+        const nama = document.querySelector('#nama')
+        const sapaan = document.querySelector('#sapaan')
+
+        // bisa dipakai berulang kali
+        function prosesSapaan() {
+            sapaan.innerText = `Halo nama: ${nama.value}`
+            name.value = ""
+        };
+
+        document.getElementById('simpan').addEventListener('click', () => {
+            // heading.innerText = "PPKD Jakarta Pusat";
+            // sapaan.innerText = 'halo nama : ${nama.value}';
+            prosesSapaan();
+            // sapaan.innerText = "halo nama : " + nama.value; bisa pakai ini
+        })
+
+        // nama.addEventListener('keyup', function (event) {
+        //     if (event.key === "enter") { 
+        //         alert('duar')}
+        //     }
+        nama.addEventListener('keyup', function (event) {
+            if (event.key === "enter") {
+                prosesSapaan()
+            }
+        })
+
+        document.getElementById('hapus').addEventListener('click', function () {
+            // sapaan.innerText = 'halo nama : ${nama.value}';
+            prosesSapaan();
+
+        })
+
+
+    </script>
+</body>
+
+</html>

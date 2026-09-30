@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM || to do list</title>
+</head>
+
+<body>
+    <h2>daftar rencana kerja</h2>
+    <input type="text" id="task" placeholder="masukkan tugas baru">
+
+    <button id="tambah">tambah</button>
+
+    <ul id="tasks"></ul>
+
+    <script>
+        const taskname = document.getElementById('task')
+        const listTasks = document.getElementById('tasks')
+
+        function createtasks() {
+            const task = taskname.value
+            if (task === "") {
+                alert('task tidak boleh kosong');
+                taskname.focus();
+                return;
+            }
+            //create element
+            const li = document.createElement('li');
+
+            li.innerText = task;
+
+            li.innerHTML = `<span>${task}</span>
+            <button class="btn-remove">hapus</button>
+            `
+            listTasks.appendChild(li);
+            taskname.value = "";
+
+
+
+            // const btnremove = document.createElement('button')
+            // btnremove.innerText = "hapus"
+            // li.appendChild(btnremove)
+            // btnremove.addEventListener('click', function () {
+            //     li.remove()
+            // })
+        }
+
+        document.getElementById('tambah').addEventListener('click', function () {
+            createtasks()
+        })
+
+        taskname.addEventListener('keyup', function (event) {
+            if (event.key === "Enter") {
+                createtasks()
+            }
+        })
+
+        listTasks.addEventListener('click', (event) => {
+            // cek ada gk si element yang mengandung kata class btn-remove
+            if (event.target.classList.contains('btn-remove')) {
+                const li = event.target.parentElement;
+                li.remove()
+            }
+        })
+
+    </script>
+</body>
+
+</html>
